@@ -3,6 +3,7 @@ package com.proyecto.universidad.modelo;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Usuario {
@@ -13,6 +14,8 @@ public class Usuario {
 	private String user;
 	@Column(length = 50)
 	private String pass;
+	@ManyToOne
+	private Rol rol;
 	public int getId() {
 		return id;
 	}
@@ -37,7 +40,7 @@ public class Usuario {
 	public void setRol(Rol rol) {
 		this.rol = rol;
 	}
-	private Rol rol;
+	
 	
 	
 

@@ -23,13 +23,11 @@ public class UsuarioService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		Usuario u= repoUser.findByUser(username);
-		ArrayList<GrantedAuthority> roles= new ArrayList<GrantedAuthority>();
-		roles.add(new SimpleGrantedAuthority(u.getRol().getName()));
-		UserDetails userDT= new User(u.getUser(),u.getPass(),roles);
-		
+		Usuario u = repoUser.findByUser(username);
+		ArrayList<GrantedAuthority> roles = new ArrayList<GrantedAuthority>();
+		roles.add(new SimpleGrantedAuthority("ADMIN"));
+		UserDetails userDT = new User(u.getUser(), u.getPass(), roles);
 		return userDT;
-
 	}
 	
 	

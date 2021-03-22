@@ -9,7 +9,7 @@ public class Rol {
 	
 	@Id
 	private int id;
-	@Column
+	@Column(length = 50)
 	private String name;
 	public int getId() {
 		return id;
